@@ -27,7 +27,7 @@ const FEATURES = [
 const IMPACT = [
   { label: 'Target waktu isi berkas', value: 'dari hari ke menit' },
   { label: 'Target berkas dikembalikan', value: 'turun' },
-  { label: 'Kanal', value: 'Telegram' },
+  { label: 'Kanal', value: 'WhatsApp/Telegram' },
 ]
 
 export default function Solution() {

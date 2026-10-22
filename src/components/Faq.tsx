@@ -4,7 +4,7 @@ import { Eyebrow, Reveal } from './ui'
 const FAQ = [
   {
     q: 'Apa itu KawalHalal?',
-    a: 'KawalHalal adalah asisten AI bernama Kala yang membantu UMK menyiapkan berkas sertifikasi halal lewat chat Telegram. Anda mengirim foto struk dan kemasan bahan, Kala menyusun data dan kelengkapan buktinya.',
+    a: 'KawalHalal adalah asisten AI bernama Kala yang membantu UMK menyiapkan berkas sertifikasi halal lewat chat WhatsApp/Telegram. Anda mengirim foto struk dan kemasan bahan, Kala menyusun data dan kelengkapan buktinya.',
   },
   {
     q: 'Apakah KawalHalal menentukan produk saya halal?',

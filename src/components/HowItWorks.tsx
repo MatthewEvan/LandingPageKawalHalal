@@ -26,7 +26,7 @@ const AUDIENCE = {
       'Daftar bahan dan bukti pemasok tersusun dari foto struk dan kemasan.',
       'Bahan dengan bukti kurang ditandai sebelum pemeriksaan LPH.',
       'Draf berkas siap dipindah ke pengajuan SiHalal.',
-      'Status pengajuan dan revisi dipantau lewat Telegram.',
+      'Status pengajuan dan revisi dipantau lewat WhatsApp/Telegram.',
     ],
   },
 }

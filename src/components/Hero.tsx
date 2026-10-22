@@ -20,7 +20,7 @@ export default function Hero({ stats }: { stats: Stats | null }) {
           </h1>
 
           <p className="mt-5 max-w-xl text-body text-ink-muted sm:text-[18px] sm:leading-[28px]">
-            Kirim foto struk dan kemasan bahan lewat chat Telegram. Kala, asisten AI KawalHalal, mencocokkan
+            Kirim foto struk dan kemasan bahan lewat chat WhatsApp/Telegram. Kala, asisten AI KawalHalal, mencocokkan
             bahan dengan registri BPJPH, menandai bukti yang masih kurang, lalu menyusun draf berkas SiHalal. Penetapan
             tetap dilakukan lewat proses BPJPH.
           </p>
