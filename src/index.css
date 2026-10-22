@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+/* Token dari KawalHalal Design System v1 (tema terang). Jangan menulis hex di komponen. */
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  /* Permukaan dan teks */
+  --color-surface: #fbf6ec;
+  --color-surface-raised: #ffffff;
+  --color-mint: #dceae6;
+  --color-ink: #14262a;
+  --color-ink-muted: #4b5e60;
+  --color-line: #d9d1c0;
+  --color-line-strong: #6e7f7b;
+
+  /* Merek dan aksen */
+  --color-brand: #0e5c5a;
+  --color-on-brand: #fbf6ec;
+  --color-brand-deep: #083b3a;
+  --color-on-deep: #fbf6ec;
+  --color-accent: #f2a93b;
+  --color-on-accent: #14262a;
+  --color-accent-ink: #8a5a00;
+  --color-focus: #0e5c5a;
+
+  /* Status */
+  --color-status-ok: #1e5c38;
+  --color-status-ok-bg: #e3f1e8;
+  --color-status-warn: #7a4e00;
+  --color-status-warn-bg: #fbebcb;
+  --color-status-risk: #8f2a20;
+  --color-status-risk-bg: #f8deda;
+
+  /* Sudut */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* Tipografi */
+  --text-display: 44px;
+  --text-display--line-height: 52px;
+  --text-subtitle: 24px;
+  --text-subtitle--line-height: 32px;
+  --text-h1: 32px;
+  --text-h1--line-height: 38px;
+  --text-h2: 24px;
+  --text-h2--line-height: 30px;
+  --text-h3: 18px;
+  --text-h3--line-height: 24px;
+  --text-body: 16px;
+  --text-body--line-height: 24px;
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 20px;
+  --text-label: 13px;
+  --text-label--line-height: 16px;
+  --text-caption: 12px;
+  --text-caption--line-height: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Cincin fokus: 2px solid, offset 2px, selalu terlihat */
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+.on-deep :where(a, button, input, select, textarea, summary):focus-visible {
+  outline-color: var(--color-accent);
+}
+
+/*
+ * Kawung: empat lingkaran bertumpuk, jarak ulang 96px, jari-jari 24px.
+ * Satu pola per permukaan, paling banyak sepertiga area, tidak pernah di belakang teks.
+ */
+.kawung-line {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Cg fill='none' stroke='%23d9d1c0' stroke-width='1.75'%3E%3Ccircle cx='24' cy='48' r='24'/%3E%3Ccircle cx='72' cy='48' r='24'/%3E%3Ccircle cx='48' cy='24' r='24'/%3E%3Ccircle cx='48' cy='72' r='24'/%3E%3C/g%3E%3C/svg%3E");
+}
+.kawung-accent {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Cg fill='none' stroke='%23f2a93b' stroke-width='1.75' stroke-opacity='.85'%3E%3Ccircle cx='24' cy='48' r='24'/%3E%3Ccircle cx='72' cy='48' r='24'/%3E%3Ccircle cx='48' cy='24' r='24'/%3E%3Ccircle cx='48' cy='72' r='24'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes bubble-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+.bubble-in {
+  animation: bubble-in 0.4s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal,
+  .bubble-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    animation: none;
+  }
+}
